@@ -1,39 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Look at workout.js, resistance then cardio
-const WorkoutSchema = new Schema({
-  type: {
-    type: Boolean,
-    default: true,
-  },
-
-  // or...
-  // 	type: {
-  // 		type: String,
-  //     trim: true,
-  //     required: "Type is Required"
-  //   }
-
-  name: {
-    type: String,
-    trim: true,
-    unique: true,
-  },
-
-  duration: {
-    type: Number,
-  },
-
+const ExerciseSchema = new Schema({
   weight: {
     type: Number,
   },
 
-  reps: {
+  sets: {
     type: Number,
   },
 
-  sets: {
+  reps: {
     type: Number,
   },
 
@@ -44,8 +21,20 @@ const WorkoutSchema = new Schema({
   distance: {
     type: Number,
   },
+
+  type: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+
+  name: {
+    type: String,
+    trim: true,
+    unique: true,
+  },
 });
 
-const Workout = mongoose.model("Workout", WorkoutSchema);
+const Workout = mongoose.model("Workout", ExerciseSchema);
 
 module.exports = Workout;
