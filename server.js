@@ -23,13 +23,18 @@ app.use(express.static("public"));
 // });
 
 // Language used to host app and database on Heroku
-var MONGODB_URI = process.env.MONGODB_URI || "mondodb://localhost/dbWorkout";
-
-mongoose.connect(MONGODB_URI);
-mongoose.connect("mongodb://localhost/dbWorkout", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  process.env.MONGODB_URI ||
+    "mondodb://mongodb://pumpitup:pumpitup1@ds041678.mlab.com:41678/heroku_sg6gsl3b",
+  {
+    useMongoClient: true,
+  }
+);
+// mongoose.connect(MONGODB_URI);
+// mongoose.connect("mongodb://localhost/dbWorkout", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+// });
 
 apiRoutes(app);
 staticRoutes(app);
