@@ -22,7 +22,7 @@ mongoose.connect(
     "mongodb://pumpitup:pumpitup1@ds041678.mlab.com:41678/heroku_sg6gsl3b",
   {
     useNewUrlParser: true,
-    useFindAndModify: false,
+    // useFindAndModify: false,
   }
 );
 
