@@ -18,13 +18,11 @@ app.use(express.static("public"));
 
 // Language used to host app and database on Heroku
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://pumpitup:pumpitup1@ds041678.mlab.com:41678/heroku_sg6gsl3b",
-
+  process.env.MONGODB_URI || "mongodb://localhost/dbWorkout",
+  // "mongodb://pumpitup:pumpitup1@ds041678.mlab.com:41678/heroku_sg6gsl3b",
   {
-    useMongoClient: true,
-    // useNewUrlParser: true,
-    // useFindAndModify: false,
+    useNewUrlParser: true,
+    useFindAndModify: false,
   }
 );
 
