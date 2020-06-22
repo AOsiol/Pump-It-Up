@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/dbWorkout", {
+mongoose.connect("mongodb://localhost/pumpitup", {
   useNewUrlParser: true,
   useFindAndModify: false,
 });
